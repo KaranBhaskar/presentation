@@ -5,7 +5,7 @@
   --page-3-color: teal;
   --page-4-color: slateblue;
   /* animation speed  */
-  --animation-speed: 1s;
+  --animation-speed: 2s;
 }
 
 body {
@@ -45,11 +45,32 @@ body {
   line-height: 1.2;
   margin: 1rem;
 }
+/* animation for heading on page 1 */
+.page-1 h1 {
+  transform: translateY(-1200px);
+  animation: heading var(--animation-speed) linear forwards;
+}
+@keyframes heading {
+  to {
+    transform: translateY(0);
+  }
+}
 
 .page p {
   font-size: 1.2rem;
   line-height: 1.2;
   padding: 0 1rem;
+}
+
+/* animation for paragrapgh  */
+.page-1 p {
+  transform: translateX(-1200px);
+  animation: paragraph var(--animation-speed) linear 1s forwards;
+}
+@keyframes paragraph {
+  to {
+    transform: translateX(0);
+  }
 }
 
 .btn {
@@ -59,6 +80,7 @@ body {
   background-color: #f4f4f4;
   padding: 1rem;
   margin: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn:hover,
